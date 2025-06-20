@@ -1,0 +1,16 @@
+class Solution {
+  public:
+    int height(Node* node) {
+        // code here
+        
+        if(node==NULL){
+            return -1 ;
+        }
+        
+        int lefttree = height(node->left);
+        int righttree = height(node->right);
+        
+        int ans = max(lefttree , righttree) + 1;
+        return ans;
+    }
+};
